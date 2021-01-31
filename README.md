@@ -1,5 +1,8 @@
 # contacts
 
+[![Build Status: Linux](https://travis-ci.org/dlwhitehurst/contacts.svg?branch=main)](https://travis-ci.org/dlwhitehurst/contacts)
+
+
 This project is a NodeJS/Express web application REST API that utilizes a 
 relational database MySQL for its data and persistence.
 
