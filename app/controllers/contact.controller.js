@@ -31,7 +31,8 @@ exports.create = (req, res) => {
   // Create a Contact
   const contact = new Contact({
     name: req.body.name,
-    code: req.body.code
+    phone: req.body.phone,
+    email: req.body.email
   });
 
   // Save Contact in the database
@@ -41,7 +42,10 @@ exports.create = (req, res) => {
         message:
           err.message || "Some error occurred while creating the Contact."
       });
-    else res.send(data);
+    else {
+      res.status(201); // created (success)
+      res.send(''); // empty body
+    }
   });
 };
 
@@ -99,7 +103,10 @@ exports.update = (req, res) => {
             message: "Error updating Contact with id " + req.params.contactId
           });
         }
-      } else res.send(data);
+      } else {
+        res.status(204); // no content (success)
+        res.send(''); // empty body
+      }
     }
   );
 };
@@ -117,7 +124,10 @@ exports.delete = (req, res) => {
           message: "Could not delete Contact with id " + req.params.contactId
         });
       }
-    } else res.send({ message: `Contact was deleted successfully!` });
+    } else {
+      res.status(204); // no content (success)
+      res.send(''); // empty body
+    }
   });
 };
 
@@ -129,6 +139,9 @@ exports.deleteAll = (req, res) => {
         message:
           err.message || "Some error occurred while removing all contacts."
       });
-    else res.send({ message: `All Contacts were deleted successfully!` });
+    else {
+      res.status(204); // no content (success)
+      res.send(''); // empty body
+    }
   });
 };

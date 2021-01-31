@@ -21,7 +21,8 @@ const sql = require("./db.js");
 // constructor
 const Contact = function(contact) {
   this.name = contact.name;
-  this.code = contact.code;
+  this.phone = contact.phone;
+  this.email = contact.email;
 };
 
 Contact.create = (newContact, result) => {
@@ -71,8 +72,8 @@ Contact.getAll = result => {
 
 Contact.updateById = (id, contact, result) => {
   sql.query(
-    "UPDATE contacts SET email = ?, name = ?, active = ? WHERE id = ?",
-    [contact.email, contact.name, contact.active, id],
+    "UPDATE contacts SET name = ?, phone = ?, email = ? WHERE id = ?",
+    [contact.name, contact.phone, contact.email, id],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
