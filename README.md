@@ -6,6 +6,7 @@
 This project is a NodeJS/Express web application REST API that utilizes a 
 relational database MySQL for its data and persistence.
 
+
 ### Endpoints
 - /v1/contacts GET
 - /v1/contacts POST
