@@ -44,6 +44,7 @@ exports.create = (req, res) => {
       });
     else {
       res.status(201); // created (success)
+      res.location(`/v1/contacts/:${data.id}`); // Sends location response header upon resource creation
       res.send(''); // empty body
     }
   });
