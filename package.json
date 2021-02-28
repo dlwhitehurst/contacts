@@ -2,7 +2,12 @@
   "name": "contacts",
   "version": "1.0.0",
   "description": "REST CRUD API for Contacts using Node.js, Express and MySQL",
+  "license": "Apache-2.0",
   "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dlwhitehurst/contacts.git"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -13,7 +18,9 @@
     "restapi"
   ],
   "author": "dlwhitehurst",
-  "license": "Apache License 2.0",
+  "optionalDependencies": {
+    "fsevents": "~1.2.13"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
